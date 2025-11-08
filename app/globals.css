@@ -1,0 +1,168 @@
+:root {
+  --bg-color: #0d0f23;
+  --panel-color: rgba(10, 12, 28, 0.85);
+  --accent: #f7c948;
+  --accent-strong: #ff6b2c;
+  --naruto: #f47920;
+  --sasuke: #4f6ae6;
+  --text-color: #f0f4ff;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 32px;
+  gap: 24px;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 4vw, 3.25rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.game-container {
+  background: linear-gradient(180deg, rgba(10, 12, 28, 0.95) 0%, rgba(10, 12, 28, 0.8) 50%, rgba(10, 12, 28, 0.95) 100%);
+  border-radius: 24px;
+  padding: 24px 24px 16px;
+  width: min(960px, 100%);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+}
+
+canvas {
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.08), transparent 60%),
+    linear-gradient(180deg, rgba(53, 70, 159, 0.25) 0%, rgba(53, 70, 159, 0.08) 80%),
+    #1a1c3c;
+}
+
+.info-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.card {
+  background: var(--panel-color);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.controls-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.controls-grid div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.legend-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.badge.naruto {
+  background: rgba(244, 121, 32, 0.12);
+  color: var(--naruto);
+}
+
+.badge.sasuke {
+  background: rgba(79, 106, 230, 0.12);
+  color: var(--sasuke);
+}
+
+.hp-bar {
+  height: 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.hp-bar-inner {
+  height: 100%;
+  transition: width 0.1s ease-out;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 12px;
+  font-size: 0.95rem;
+}
+
+.status-label {
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-value {
+  font-weight: 600;
+}
+
+footer {
+  margin-top: auto;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.85rem;
+}
